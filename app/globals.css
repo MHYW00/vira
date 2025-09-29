@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical CSS - Above the fold */
+:root {
+  --kraft-brown: #CBB994;
+  --dark-green: #2E4E3F;
+  --creamy-white: #F5F5F5;
+  --stone-primary: #78716c;
+  --green-primary: #166534;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Manrope Regular'), local('Manrope-Regular');
+}
+
+/* Base Styles - Critical */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #374151;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Gradients - Optimized */
+.text-gradient {
+  /* Strong fallback color for better visibility */
+  color: #15803d;
+  font-weight: 700;
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 30%, #eab308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ensure gradient works on supported browsers */
+@supports (-webkit-background-clip: text) {
+  .text-gradient {
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Alternative gradient class for better visibility */
+.text-gradient-alt {
+  color: #16a34a;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(22, 101, 52, 0.3);
+}
+
+/* Desktop gradient support check */
+@supports (-webkit-background-clip: text) {
+  .text-gradient {
+    color: transparent;
+  }
+}
+
+.bg-gradient-eco {
+  background: linear-gradient(135deg, #166534 0%, #15803d 50%, #16a34a 100%);
+}
+
+.bg-gradient-stone {
+  background: linear-gradient(135deg, #78716c 0%, #57534e 50%, #44403c 100%);
+}
+
+/* Modern Button Styles - Optimized */
+.btn-modern {
+  @apply relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl shadow-lg;
+  background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+  color: white;
+  border: none;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.btn-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: inherit;
+}
+
+.btn-modern:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px -5px rgba(22, 101, 52, 0.3);
+}
+
+.btn-modern:hover::before {
+  opacity: 1;
+}
+
+.btn-modern > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-modern-outline {
+  @apply relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-2xl border-2 border-green-800/30 shadow-lg;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  color: #166534;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  will-change: transform;
+}
+
+.btn-modern-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(22, 101, 52, 0.05) 0%, rgba(21, 128, 61, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: inherit;
+}
+
+.btn-modern-outline:hover {
+  border-color: rgba(22, 101, 52, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px -5px rgba(22, 101, 52, 0.2);
+}
+
+.btn-modern-outline:hover::before {
+  opacity: 1;
+}
+
+/* Glassmorphism Cards - Optimized */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.glass-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Optimized Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Glow Effects - Reduced */
+.glow-green {
+  box-shadow: 0 0 10px rgba(22, 101, 52, 0.2);
+}
+
+.glow-green:hover {
+  box-shadow: 0 0 15px rgba(22, 101, 52, 0.3);
+}
+
+/* Pulse Animation - Optimized */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(22, 101, 52, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(22, 101, 52, 0.4);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Shimmer Effect - Optimized */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Hover Transform Effects - Optimized */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* Icon Bounce - Reduced */
+@keyframes bounce-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.icon-bounce:hover .icon {
+  animation: bounce-icon 0.4s ease-in-out;
+}
+
+/* Smooth Reveal Animation - Optimized */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-animation {
+  animation: reveal 0.6s ease-out forwards;
+}
+
+/* Custom Scrollbar - Optimized */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #166534;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
+
+/* Loading Spinner - Optimized */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(22, 101, 52, 0.2);
+  border-top: 2px solid #166534;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  /* Reduce font weights for performance */
+  body {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  /* Optimize container padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Reduce section padding */
+  .section-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Optimize touch targets */
+  button, .btn-modern, .btn-modern-outline {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Reduce glassmorphism blur for performance */
+  .glass-card {
+    backdrop-filter: blur(5px);
+  }
+
+  /* Optimize animations for mobile */
+  .float-animation {
+    animation-duration: 6s;
+  }
+
+  /* Reduce all transitions */
+  * {
+    transition-duration: 0.15s !important;
+  }
+  
+  /* Disable expensive effects on mobile */
+  .shimmer,
+  .pulse-glow {
+    animation: none;
+  }
+}
+
+/* Reduce motion for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .float-animation,
+  .pulse-glow,
+  .shimmer {
+    animation: none;
+  }
+}
+
+/* Focus States - Optimized */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-green-800/20 focus:border-green-800;
+}
+
+/* Form Enhancements - Optimized */
+.form-input {
+  @apply w-full px-4 py-3 border-2 border-stone-200 rounded-xl bg-white/50 backdrop-blur-sm focus-ring;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input:focus {
+  @apply border-green-800 bg-white/70;
+  box-shadow: 0 0 0 2px rgba(22, 101, 52, 0.1);
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Remove animations and effects for print */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Performance Critical - Contain layout shifts */
+.container {
+  contain: layout style;
+}
+
+/* Optimize will-change for animations */
+.float-animation,
+.hover-lift,
+.btn-modern,
+.btn-modern-outline,
+.glass-card {
+  will-change: transform;
+}
+
+/* Remove will-change after animation */
+.float-animation:hover,
+.hover-lift:not(:hover),
+.btn-modern:not(:hover),
+.btn-modern-outline:not(:hover),
+.glass-card:not(:hover) {
+  will-change: auto;
+} 
