@@ -1,7 +1,17 @@
-'use client'
-
 import dynamic from 'next/dynamic'
-import Hero from '@/sections/Hero'
+
+// Load Hero immediately without SSR issues
+const Hero = dynamic(() => import('@/sections/Hero'), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-100 to-stone-100 flex items-center justify-center">
+      <div className="text-center">
+        <div className="text-6xl font-bold text-green-800 mb-4">Viracup</div>
+        <div className="text-xl text-green-800/80">Yükleniyor...</div>
+      </div>
+    </div>
+  )
+})
 
 // Optimized lazy loading with SSR support
 const ProductShowcase = dynamic(() => import('@/sections/ProductShowcase'), {

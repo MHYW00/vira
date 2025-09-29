@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center lg:text-left"
           >
 
 
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-green-800 mb-4 sm:mb-6 font-manrope leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-green-800 mb-4 sm:mb-6 font-manrope leading-tight"
             >
               Karton Bardak{' '}
               <span 
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-green-800/80 mb-6 sm:mb-8 leading-relaxed px-2 sm:px-4 md:px-0"
+              className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-green-800/80 mb-6 sm:mb-8 leading-relaxed px-0"
             >
               Türkiye'nin lider karton bardak üreticisi. 6.5oz ve 7oz standart, 8oz ve 14oz özel baskı karton bardak çeşitleri. 
               <br className="hidden sm:block" />
