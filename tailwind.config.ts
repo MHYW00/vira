@@ -7,6 +7,26 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './sections/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'font-manrope',
+    'text-gradient',
+    'text-gradient-alt',
+    'bg-gradient-eco',
+    'bg-gradient-stone',
+    'btn-modern',
+    'btn-modern-outline',
+    'glass-card',
+    'float-animation',
+    'glow-green',
+    'pulse-glow',
+    'shimmer',
+    'hover-lift',
+    'icon-bounce',
+    'reveal-animation',
+    'spinner',
+    'focus-ring',
+    'form-input'
+  ],
   theme: {
     extend: {
       colors: {

@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   poweredByHeader: false,
   reactStrictMode: true,
+
   
   // Compression
   compress: true,

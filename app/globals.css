@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+/* Font import moved to layout.tsx for better loading */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS - Add after Tailwind to avoid purging */
 
 /* Critical CSS - Above the fold */
 :root {
