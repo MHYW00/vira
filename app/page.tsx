@@ -1,38 +1,11 @@
+import Hero from '@/sections/Hero'
 import dynamic from 'next/dynamic'
 
-// Load Hero immediately without SSR issues
-const Hero = dynamic(() => import('@/sections/Hero'), {
-  ssr: false,
-  loading: () => (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-100 to-stone-100 flex items-center justify-center">
-      <div className="text-center">
-        <div className="text-6xl font-bold text-green-800 mb-4">Viracup</div>
-        <div className="text-xl text-green-800/80">Yükleniyor...</div>
-      </div>
-    </div>
-  )
-})
-
-// Optimized lazy loading with SSR support
-const ProductShowcase = dynamic(() => import('@/sections/ProductShowcase'), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100"></div>
-})
-
-const WhyViracup = dynamic(() => import('@/sections/WhyViracup'), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100"></div>
-})
-
-const About = dynamic(() => import('@/sections/About'), {
-  loading: () => <div className="h-96 animate-pulse bg-gray-100"></div>
-})
-
-const ContactForm = dynamic(() => import('@/sections/ContactForm'), {
-  loading: () => <div className="h-64 animate-pulse bg-gray-100"></div>
-})
-
-const Footer = dynamic(() => import('@/sections/Footer'), {
-  loading: () => <div className="h-32 animate-pulse bg-gray-100"></div>
-})
+import ProductShowcase from '@/sections/ProductShowcase'
+import WhyViracup from '@/sections/WhyViracup'
+import About from '@/sections/About'
+import ContactForm from '@/sections/ContactForm'
+import Footer from '@/sections/Footer'
 
 const FloatingWhatsApp = dynamic(() => import('@/components/FloatingWhatsApp'), {
   ssr: false
