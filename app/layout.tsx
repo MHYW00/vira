@@ -82,12 +82,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" 
           as="style" 
         />
-        <noscript>
-          <link 
-            rel="stylesheet" 
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" 
-          />
-        </noscript>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+        />
         
         {/* Viewport Optimization */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
